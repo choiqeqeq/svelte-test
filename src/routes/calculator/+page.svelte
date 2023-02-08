@@ -2,6 +2,8 @@
   let display = '';
 
   function handleClick(event: MouseEvent) {
+    // 이벤트 핸들러가 보는 MouseEvent가 HTMLInputElement에서 온것임을 알 수 없기에 케스팅 필요함
+    // https://stackoverflow.com/questions/70031167/event-type-typescript-for-event-handler-in-svelte
     const target = (event.target as HTMLInputElement);
     display += target.innerHTML;
   }
